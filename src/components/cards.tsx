@@ -58,7 +58,10 @@ const CardList: React.FC = () => {
                             <div className="p-price">From ${product.price}</div>
                         </div>
                         <div className="add-to-cart-btn-wrp">
-                            <div className="add-cart-button">Add to Cart</div>
+                            <div className="add-cart-button">
+                                <i className="fas fa-bolt"></i>
+                                Add to Cart
+                            </div>
                         </div>
                         <div className="fav-icon" onClick={() => toggleFavorite(product.id)}>
                             <i className={favorites[product.id] ? "fas fa-heart" : "far fa-heart"}></i>
