@@ -18,8 +18,8 @@ type CartState = Record<number, number>; // Tracks quantity of each product
 const CardList: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [favorites, setFavorites] = useState<Favorites>({});
-    const [cart, setCart] = useState<CartState>({}); // Stores product counts
-
+    const [cart, setCart] = useState<CartState>({});
+    
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
             .then((res) => res.json())
