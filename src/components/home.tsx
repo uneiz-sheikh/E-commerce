@@ -3,10 +3,12 @@ import ImageCarousel from './slider'
 import ProductPage from './productPage'
 import NewsLetter from './newsLetter'
 import Footer from './footer'
+import { Navbar } from 'react-bootstrap'
 
 const Home = () => {
     return (
         <>
+            {/* <Navbar/> */}
             <div className="home-page"  >
                 <ImageCarousel />
 

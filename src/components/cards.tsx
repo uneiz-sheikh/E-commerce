@@ -11,12 +11,14 @@ interface Product {
     image: string;
 }
 
-// Define the type for favorites state
+// Define the types for state
 type Favorites = Record<number, boolean>;
+type CartState = Record<number, number>; // Tracks quantity of each product
 
 const CardList: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [favorites, setFavorites] = useState<Favorites>({});
+    const [cart, setCart] = useState<CartState>({}); // Stores product counts
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
@@ -25,10 +27,36 @@ const CardList: React.FC = () => {
             .catch((error) => console.error("Error fetching data:", error));
     }, []);
 
+    // Toggle favorite (wishlist)
     const toggleFavorite = (id: number) => {
         setFavorites((prev) => ({
             ...prev,
             [id]: !prev[id],
+        }));
+    };
+
+    // Add product to cart or increase quantity
+    const addToCart = (id: number) => {
+        setCart((prev) => ({
+            ...prev,
+            [id]: (prev[id] || 0) + 1, 
+        }));
+    };
+
+    // Remove product from cart
+    const removeFromCart = (id: number) => {
+        setCart((prev) => {
+            const newCart = { ...prev };
+            delete newCart[id]; 
+            return newCart;
+        });
+    };
+
+    // Increase product count
+    const increaseCount = (id: number) => {
+        setCart((prev) => ({
+            ...prev,
+            [id]: prev[id] + 1,
         }));
     };
 
@@ -57,11 +85,26 @@ const CardList: React.FC = () => {
                             <div className="p-name">{product.title}</div>
                             <div className="p-price">From ${product.price}</div>
                         </div>
-                        <div className="add-to-cart-btn-wrp">
-                            <div className="add-cart-button">
-                                <i className="fas fa-bolt"></i>
-                                Add to Cart
-                            </div>
+                        <div className="add-cart-button">
+                            {cart[product.id] ? (
+
+                                <div className="cart_counter">
+                                    <div className="icon_wrp" onClick={() => removeFromCart(product.id)}>
+                                        <i className="fas fa-trash-alt"></i>
+                                    </div>
+                                    <div className="counter_value">{cart[product.id]}</div>
+                                    <div className="icon_wrp" onClick={() => increaseCount(product.id)}>
+                                        <i className="far fa-plus"></i>
+                                    </div>
+                                </div>
+
+                            ) : (
+
+                                <div className="add_cart_btn" onClick={() => addToCart(product.id)}>
+                                    <i className="fas fa-bolt"></i> Add to Cart
+                                </div>
+
+                            )}
                         </div>
                         <div className="fav-icon" onClick={() => toggleFavorite(product.id)}>
                             <i className={favorites[product.id] ? "fas fa-heart" : "far fa-heart"}></i>
