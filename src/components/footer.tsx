@@ -4,7 +4,7 @@ import Logo from "../assets/images/logo.png";
 export default function Footer() {
     return (
         <footer className="footer" >
-            <div className="container mx-auto grid md:grid-cols-4 gap-8">
+            <div className="container-sm mx-auto grid md:grid-cols-4 gap-8">
                 <div className="footer_cont_wrp">
 
                     <div className="footer_widget" >
@@ -16,7 +16,7 @@ export default function Footer() {
                         <p className="text-blue-600">info@demo.com</p>
                     </div>
                     <div className="footer_widget" >
-                        <h3 className="font-semibold mb-2">Help Center</h3>
+                        <h3 className="font-semibold mb-sm-2">Help Center</h3>
                         <ul>
                             <li><a href="#">FAQ</a></li>
                             <li><a href="#">About E-Commerce</a></li>
@@ -25,7 +25,7 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div className="footer_widget" >
-                        <h3 className="font-semibold mb-2">Quick Links</h3>
+                        <h3 className="font-semibold mb-sm-2">Quick Links</h3>
                         <ul>
                             <li><a href="#">Become A Supplier</a></li>
                             <li><a href="#">Track Order</a></li>
@@ -34,14 +34,14 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div className="footer_widget" >
-                        <h3 className="font-semibold mb-2">Buy On E-Commerce</h3>
+                        <h3 className="font-semibold mb-sm-2">Buy On E-Commerce</h3>
                         <ul>
                             <li><a href="#">Terms & Conditions</a></li>
                             <li><a href="#">Privacy & Rules</a></li>
                         </ul>
                     </div>
                     <div className="footer_widget" >
-                        <h3 className="font-semibold mb-2">Download App </h3>
+                        <h3 className="font-semibold mb-sm-2">Download App </h3>
                         <div className="mt-4">
                         </div>
                     </div>
