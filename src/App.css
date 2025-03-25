@@ -8,6 +8,10 @@ body {
   box-sizing: border-box;
   background-color: #e7e7e7;
 }
+.home-page
+{
+  margin-top: 85px;
+}
 
 .navbar {
   display: flex;
@@ -16,7 +20,14 @@ body {
   padding: 20px !important;
   background-color: #fff;
 }
-
+nav.navbar {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
 .logo img {
   width: 120px;
 }
@@ -422,7 +433,11 @@ i.fas.fa-heart {
   .navbar {
     padding: 14px 20px !important;
   }
-
+  .home-page
+  {
+    margin-top: 60px;
+  }
+  
   .logo img {
     width: 100px;
   }
@@ -458,6 +473,7 @@ i.fas.fa-heart {
   .newsletter-detail {
     padding: 20px;
     background-size: cover;
+    height: 170px;
   }
 
   .copy_right {
@@ -501,7 +517,9 @@ i.fas.fa-heart {
     height: 36px;
     font-size: 12px;
   }
-
+  .news_cont .search_box input {
+   background: transparent;
+  }
   .navbar {
     padding: 14px 15px !important;
   }
@@ -542,5 +560,12 @@ i.fas.fa-heart {
   }
   .footer ul {
     margin-top: 20px;
+  }
+  .footer p
+  {
+    font-weight: 500;
+  }
+  .product-detail .icon {
+    padding: 0px 8px 0px 8px;
   }
 }
