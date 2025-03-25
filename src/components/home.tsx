@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import ImageCarousel from './slider'
 import ProductPage from './productPage'
 import NewsLetter from './newsLetter'

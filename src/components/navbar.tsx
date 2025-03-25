@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import Logo from "../assets/images/logo.png";
 import SearchIcon from "../assets/images/search-interface-symbol.png"; 
 import Usericon from "../assets/images/profile-user.png"
